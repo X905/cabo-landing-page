@@ -17,16 +17,32 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+
         <a class=" img-logo" href="#page-top">
             <img src="images/logos/logo.png" alt="" width="100" height="auto">
         </a>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
+                <!-- Logo para móviles/tablets (visible solo en pantallas pequeñas) -->
+                <a href="#page-top" class="d-block d-lg-none navbar-brand-mobile">
+                    <img 
+                        src="images/logos/logo.png"
+                        alt="Logo Mobile" 
+                        width="80" 
+                        height="auto"
+                        class="me-3"
+                    >
+                </a>
+        
+                <!-- Botón del menú hamburguesa -->
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                        Menu
+                        <i class="fas fa-bars ms-1"></i>
+                    </button>
+                </div>
+        
+                <!-- Menú de navegación -->
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
@@ -38,6 +54,7 @@
                 </div>
             </div>
         </nav>
+        
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">

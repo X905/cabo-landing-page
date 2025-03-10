@@ -11329,3 +11329,9 @@ section#contact form#contactForm :-ms-input-placeholder {
       display: none; /* Oculta el logo en móviles */
   }
 }
+
+
+/* Logo para MÓVILES/TABLETS */
+.navbar-brand.d-block.d-lg-none {
+  margin-left: 15px; /* Ajusta la posición a la izquierda */
+}
