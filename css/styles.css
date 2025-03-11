@@ -11410,6 +11410,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .btn-main:hover {
+  color:#2d3436;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -11429,4 +11430,34 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-shadow: 
       0.07em 0.07em 0.2em rgba(0,0,0,0.4),
       0 0 0.6em rgba(0,0,0,0.3);
+}
+
+/*carrusel*/
+
+.carousel-item {
+    height: 400px; /* Altura fija para el carrusel */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-caption {
+    bottom: 20px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.bg-opacity-75 {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.text-span {
+  background-color: #FFEE00;  /* Amarillo sólido */
+  color: #000000;            /* Texto negro */
+  padding: 0.2em 0.4em;      /* Espaciado interno */
+  border-radius: 4px;        /* Esquinas redondeadas */
+  display: inline-block;     /* Mejor control del fondo */
 }
