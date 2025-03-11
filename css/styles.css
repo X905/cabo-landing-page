@@ -10942,17 +10942,20 @@ p {
     margin-right: 0;
   }
 }
+
+
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../images/banner/banner-living.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
 }
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
@@ -11334,4 +11337,96 @@ section#contact form#contactForm :-ms-input-placeholder {
 /* Logo para MÓVILES/TABLETS */
 .navbar-brand.d-block.d-lg-none {
   margin-left: 15px; /* Ajusta la posición a la izquierda */
+}
+
+
+
+/* Estilo base */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn-main {
+  background: #F0DC15;
+  color: #2d3436;
+  border: 1px solid #e0e0e0;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.secondary-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d3436;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+/* Colores de marca en hover */
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: white;
+}
+
+.facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  color: white;
+}
+
+.icon-btn:not(.whatsapp):not(.facebook):hover {
+  background: #2d3436;
+  border-color: #2d3436;
+  color: white;
+}
+
+.btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.masthead-subheading {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  text-shadow: 
+      0.05em 0.05em 0.15em rgba(0,0,0,0.3),
+      0 0 0.4em rgba(0,0,0,0.4);
+}
+
+.masthead-heading {
+  font-size: 2.5rem;
+  text-shadow: 
+      0.07em 0.07em 0.2em rgba(0,0,0,0.4),
+      0 0 0.6em rgba(0,0,0,0.3);
 }
