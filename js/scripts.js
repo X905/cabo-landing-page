@@ -52,3 +52,30 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-buttons .btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            
+            carouselItems.forEach(item => {
+                const projects = item.querySelectorAll('.project-card');
+                projects.forEach(project => {
+                    const categories = project.dataset.category.split(' ');
+                    if(filter === 'all' || categories.includes(filter)) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+});
