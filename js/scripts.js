@@ -54,28 +54,50 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-buttons .btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const filter = this.dataset.filter;
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            
-            carouselItems.forEach(item => {
-                const projects = item.querySelectorAll('.project-card');
-                projects.forEach(project => {
-                    const categories = project.dataset.category.split(' ');
-                    if(filter === 'all' || categories.includes(filter)) {
-                        project.style.display = 'block';
-                    } else {
-                        project.style.display = 'none';
-                    }
-                });
-            });
-        });
-    });
+
+var project = $('#projects-carousel').owlCarousel({
+    nav: true,
+    loop: true,
+    margin:20,
+    navText: ['<i class="fa fa-long-arrow-left"></i> Anterios', 'Siguiente<i class="fa fa-long-arrow-right"></i>'],
+    responsive:{
+        0:{
+            items:1,
+            margin: 0
+        },
+        600:{
+            items:2
+        },
+        800:{
+            items:2
+        },
+        992:{
+            items:3
+        },
+        1200:{
+            items:4
+        },
+    }
 });
+
+
+
+
+    /*------------------
+        Background set
+    --------------------*/
+    $('.set-bg').each(function() {
+        var bg = $(this).data('setbg');
+        $(this).css('background-image', 'url(' + bg + ')');
+    });
+
+
+
+        function hidePlaceholder() {
+            document.querySelector('.map-container').classList.add('map-loaded');
+        }
+        
+        // Fallback en caso de error
+        setTimeout(() => {
+            document.querySelector('.map-container')?.classList.add('map-loaded');
+        }, 5000);

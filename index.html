@@ -19,6 +19,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Asegúrate de tener estos enlaces en tu head -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/owl.carousel.css"/>
         
     </head>
     <body id="page-top">
@@ -54,7 +55,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -324,7 +325,7 @@
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-lg-7 col-md-10 bg-dark text-white p-5 position-relative">
-                <h2 class="display-5 fw-bold mb-4">
+                <h2 class="display-5 fw-bold mb-4" href="#about">
                     Servicios integrales de la más alta 
                     <span class="text-warning">Calidad</span>
                 </h2>
@@ -348,7 +349,7 @@
                     </div>
                 </div>
 
-                <a href="#contacto" class="btn btn-warning btn-lg rounded-pill px-4">
+                <a href="#" class="btn btn-warning btn-lg rounded-pill px-4">
                     Solicitar presupuesto
                 </a>
             </div>
@@ -357,168 +358,95 @@
 </section>
 
 
-<!-- Sección de Logros -->
-<section class="milestones py-5 bg-light">
+<!--
+<section class="milestones-section spad">
     <div class="container">
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-3 col-md-6">
-                <div class="card text-center border-0 p-4 shadow-hover">
-                    <h2 class="display-4 fw-bold text-primary">30</h2>
-                    <p class="text-muted mb-0">Años de experiencia</p>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="milestone">
+                    <h2>30</h2>
+                    <p>Años <br>de <br>Experiencia</p>
                 </div>
             </div>
-            <!-- Repetir para los otros logros -->
+            <div class="col-lg-4 col-md-6">
+                <div class="milestone">
+                    <h2>124</h2>
+                    <p>Proyectos</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="milestone">
+                    <h2>178</h2>
+                    <p>Clientes <br>satisfechos</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+ -->
 
-<!-- Sección de Proyectos con Carrusel -->
-<section class="projects py-5">
+
+<!-- Projects section start -->
+<div class="projects-section pb50">
     <div class="container">
-        <div class="row mb-5 align-items-center">
-            <div class="col-lg-4">
-                <h2 class="display-5 fw-bold mb-4">Nuestros Proyectos</h2>
+        <div class="row">
+            <div class="text-center mb-1">
+                <h2 class="display-5 fw-bold mb-1 mt-5">Proyectos</h2>
+                <div class="divider mx-auto bg-warning mb-"></div>
             </div>
-            <div class="col-lg-8">
-                <div class="d-flex gap-3 flex-wrap filter-buttons">
-                    <button class="btn btn-outline-dark active" data-filter="all">Todos</button>
-                    <button class="btn btn-outline-dark" data-filter="rest">Restauraciones</button>
-                    <button class="btn btn-outline-dark" data-filter="build">Construcciones</button>
-                    <button class="btn btn-outline-dark" data-filter="apart">Interiores</button>
-                </div>
+            <div class="col-lg-9">
+                <ul class="projects-filter-nav">
+                    <li class="btn-filter" data-filter="*">Todos</li>
+                    <li class="btn-filter" data-filter=".rest">Restauraciones</li>
+                    <li class="btn-filter" data-filter=".build">Construcciones</li>
+                    <li class="btn-filter" data-filter=".apart">Interior</li>
+                </ul>
             </div>
         </div>
-
-        <!-- Carrusel Bootstrap -->
-        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Proyecto 1 -->
-                <div class="carousel-item active">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <img src="images/servicios/IMG_20230731_164941.jpg" class="d-block w-100" alt="Proyecto 1">
-                                <div class="project-overlay">
-                                    <h3 class="h5 text-white">Gran Restauración</h3>
-                                    <p class="text-light small">Mayo 2018</p>
-                                    <a href="#" class="btn btn-outline-light btn-sm">Ver Proyecto</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Agregar más proyectos en la misma slide -->
-                    </div>
-                </div>
-                
-                <!-- Proyecto 2 -->
-                <div class="carousel-item">
-                    <div class="row g-4">
-                        <!-- Contenido similar -->
-                    </div>
-                </div>
+    </div>                      
+    <div id="projects-carousel" class="projects-slider">
+        <div class="single-project set-bg rest" data-setbg="images/servicios/IMG_20230731_164941.jpg">
+            <div class="project-content">
+                <h2>Gran <br> Restauracion</h2>
+                <p class="fecha-destacada">Mayo 9, 2018</p>
+                <button type="button" class="btn btn-warning">Ver mas</button>
             </div>
+        </div>
+        <div class="single-project set-bg build" data-setbg="images/servicios/IMG_20240607_143928.jpg">
+            <div class="project-content">
+                <h2>Oficinas <br> construccion</h2>
+                <p class="fecha-destacada">Julio 1, 2017</p>
+                <button type="button" class="btn btn-warning">Ver Mas</button>
 
-            <!-- Controles del Carrusel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+            </div>
+        </div>
+        <div class="single-project set-bg apart" data-setbg="images/servicios/IMG_20240703_124126.jpg">
+            <div class="project-content">
+                <h2>Bonitos <br> Interiores</h2>
+                <p class="fecha-destacada">Enero 19, 2018</p>
+                <button type="button" class="btn btn-warning">Ver mas</button>
+
+            </div>
+        </div>
+        <div class="single-project set-bg rest" data-setbg="images/servicios/IMG_20241008_123557.jpg">
+            <div class="project-content">
+                <h2>Grandes <br> Restauraciones</h2>
+                <p class="fecha-destacada">Julio 19, 2019</p>
+                <button type="button" class="btn btn-warning">Ver mas</button>
+
+            </div>
+        </div>
+        <div class="single-project set-bg apart" data-setbg="images/servicios/IMG_20241009_110013.jpg">
+            <div class="project-content">
+                <h2>Oficinas <br> Remodelacion</h2>
+                <p class="fecha-destacada">Febrero 20, 2018</p>
+                <button type="button" class="btn btn-warning">Ver mas</button>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
+
 
 
         
@@ -566,25 +494,36 @@
                 </div>
             </div>
         </section>
-        <!-- Clients-->
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
-                    </div>
+        
+        <div class="map-container">
+            <!-- Placeholder -->
+            <div class="map-placeholder">
+                <div class="loading-animation"></div>
+                <div class="placeholder-content">
+                    <div class="placeholder-line" style="width: 80%"></div>
+                    <div class="placeholder-line" style="width: 60%"></div>
+                    <div class="placeholder-line" style="width: 70%"></div>
                 </div>
             </div>
+            
+            <!-- Mapa -->
+            <iframe 
+                id="mapIframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.26668973339!2d-88.1661305!3d13.4576511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7ad5a53fd7b807%3A0x969228478638610a!2sCABO%20Multiservicios!5e0!3m2!1ses!2ssv!4v1741807772222!5m2!1ses!2ssv" 
+                width="100%" 
+                height="400" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                onload="hidePlaceholder()">
+            </iframe>
         </div>
+        
+       
+        
+
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -878,6 +817,9 @@
             </div>
         </div>
         <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha512-SFaNb3xC08k/Wf6CRM1J+O/vv4YWyrPBSdy0o+1nqKzf+uLrIBnaeo8aYoAAOd31nMNHwX8zwVwTMbbCJjA8Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.owl-filter.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
@@ -886,8 +828,7 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-        
+      
         
     </body>
 </html>

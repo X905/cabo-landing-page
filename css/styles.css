@@ -11545,66 +11545,249 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
-
-/* Estilos Minimalistas */
-.shadow-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/*----------------------------------------*/
+/*  Projects Section CSS
+/*----------------------------------------*/
+.projects-filter-nav {
+	list-style: none;
+	text-align: right;
+	margin-top: 20px;
 }
 
-.shadow-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+.projects-filter-nav li {
+	display: inline-block;
+	margin-left: 25px;
+	color: #747474;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0 5px;
+	cursor: pointer;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
+	transition: .4s;
 }
 
-.project-card {
+.projects-filter-nav li.btn-active {
+	background: #F0DC15;
+	color: #222222;
+}
+
+.projects-slider {
+	padding: 0 40px;
+	margin-top: 60px;
+}
+
+.projects-slider .single-project {
+	height: 550px;
+	width: 100%;
+	background: #333;
+	-o-transition: .8s;
+	transition: .8s;
+	-webkit-transition: .8s;
+	-ms-transform: translateX(0);
+	    transform: translateX(0);
+	-webkit-transform: translateX(0);
+	opacity: 1;
+}
+
+.projects-slider .single-project .project-content {
+	padding: 50px;
+	height: 100%;
+	background: rgba(13, 13, 13, 0.5);
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+	opacity: 0;
+}
+
+.projects-slider .single-project .project-content h2 {
+	color: #fff;
+	font-weight: 500;
+	position: relative;
+	top: 20px;
+	-webkit-transition: all 0.6s ease 0s;
+	-o-transition: all 0.6s ease 0s;
+	transition: all 0.6s ease 0s;
+}
+
+.projects-slider .single-project .project-content p {
+	color: #F0DC15;
+	font-weight: 500;
+	position: relative;
+	top: 40px;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.projects-slider .single-project .seemore {
+	position: absolute;
+	right: 50px;
+	bottom: 30px;
+	background: #F0DC15;
+	font-size: 14px;
+	font-weight: 700;
+	color: #222;
+	display: inline-block;
+	padding: 2px 8px;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+.projects-slider .single-project:hover .project-content {
+	opacity: 1;
+}
+
+.projects-slider .single-project:hover .project-content h2,
+.projects-slider .single-project:hover .project-content p {
+	top: 0;
+}
+
+.projects-slider .single-project:hover .seemore {
+	bottom: 50px;
+}
+
+.projects-slider .single-project.__loading {
+	opacity: 0;
+	-ms-transform: translateX(40px);
+	    transform: translateX(40px);
+	-webkit-transform: translateX(40px);
+}
+
+.projects-slider .owl-nav {
+	text-align: right;
+	max-width: 1170px;
+	margin: 40px auto 0;
+}
+
+.projects-slider .owl-nav .owl-prev,
+.projects-slider .owl-nav .owl-next {
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #222222;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+	padding: 0 5px;
+}
+
+.projects-slider .owl-nav .owl-prev:hover,
+.projects-slider .owl-nav .owl-next:hover {
+	background: #F0DC15;
+}
+
+.projects-slider .owl-nav .owl-prev i {
+	margin-right: 5px;
+}
+
+.projects-slider .owl-nav .owl-next {
+	margin-right: 0px;
+}
+
+.projects-slider .owl-nav .owl-next i {
+	margin-left: 5px;
+}
+
+/* Ajustes para el tamaño de imágenes */
+.projects-slider .single-project {
+  height: 70vh; /* Altura relativa al viewport */
+  min-height: 500px; /* Altura mínima para desktop */
+  max-height: 800px; /* Altura máxima para pantallas grandes */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  border-radius: 8px;
   overflow: hidden;
 }
 
-.project-overlay {
+
+
+/* Asegurar relación de aspecto 16:9 en móviles */
+@media (max-width: 768px) {
+  .projects-slider .single-project {
+      height: 60vh;
+      min-height: 400px;
+  }
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+  transform: translateY(-5px);
+}
+
+.map-container::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  z-index: 2;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+
+.map-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    border-radius: 12px;
+    z-index: 2;
+    transition: opacity 0.3s ease;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-  opacity: 0.8;
+.loading-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: #2d3748;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.btn-outline-dark {
-  border-width: 2px;
-  transition: all 0.3s ease;
+.placeholder-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
 }
 
-.btn-outline-dark.active {
-  background: #212529;
-  color: white;
+.placeholder-line {
+    height: 8px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    margin-bottom: 12px;
 }
 
-@media (max-width: 768px) {
-  .project-overlay {
-      padding: 0.5rem;
-  }
-  
-  .project-overlay h3 {
-      font-size: 1rem;
-  }
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Ocultar placeholder cuando el mapa carga */
+.map-loaded .map-placeholder {
+    opacity: 0;
+    pointer-events: none;
 }
