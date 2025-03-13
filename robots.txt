@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /template/
+
+
+Sitemap: https://www.cabomultiservicios.com/sitemap.xml
