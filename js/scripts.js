@@ -59,7 +59,7 @@ var project = $('#projects-carousel').owlCarousel({
     nav: true,
     loop: true,
     margin:20,
-    navText: ['<i class="fa fa-long-arrow-left"></i> Anterios', 'Siguiente<i class="fa fa-long-arrow-right"></i>'],
+    navText: ['<i class="fa fa-long-arrow-left"></i> Anterior', 'Siguiente<i class="fa fa-long-arrow-right"></i>'],
     responsive:{
         0:{
             items:1,
