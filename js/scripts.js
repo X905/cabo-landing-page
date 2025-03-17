@@ -101,3 +101,39 @@ var project = $('#projects-carousel').owlCarousel({
         setTimeout(() => {
             document.querySelector('.map-container')?.classList.add('map-loaded');
         }, 5000);
+
+               // Inicializar Isotope
+               $(document).ready(function() {
+                // Configuración Isotope con Masonry
+                let $grid = $('.portfolio-grid').isotope({
+                    itemSelector: '.portfolio-item',
+                    layoutMode: 'masonry',
+                    masonry: {
+                        columnWidth: '.grid-sizer',
+                        gutter: 20
+                    },
+                    // Opciones que mantienen la compatibilidad
+                    getSortData: {
+                        category: '[data-category]'
+                    }
+                });
+            
+                // Filtrado (se mantiene igual)
+                $('.filter-btn').click(function() {
+                    $('.filter-btn').removeClass('active');
+                    $(this).addClass('active');
+                    let filterValue = $(this).attr('data-filter');
+                    $grid.isotope({ filter: filterValue });
+                });
+            
+                // Manejo del modal (se mantiene igual)
+                $('.portfolio-item').click(function() {
+                    const imgSrc = $(this).find('img').attr('src');
+                    const title = $(this).find('h4').text();
+                    const category = $(this).find('.project-category').text();
+                    
+                    $('.modal-image').attr('src', imgSrc);
+                    $('.modal-project-title').text(title);
+                    $('.modal-project-category').text(category);
+                });
+            });
