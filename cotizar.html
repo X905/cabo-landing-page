@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cotizá techos, pisos, ventanas, cocheras y pantrys con Cabo Multiservicios. Precios competitivos y asesoría directa en San Miguel y residenciales cercanas.">
+  <meta name="keywords" content="cabo, servicios, construccion, san miguel, pisos, diseño, lavanderia, pantrys, planos, cotizar, closet">
+  <title>Catálogo de Servicios - CABO Multiservicios</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="images/logos/cabito.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .modal-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body id="page-top">
+    <a class=" img-logo" href="index.html">
+        <img src="images/logos/logo.png" alt="" width="100" height="auto">
+    </a>
+    <div class="container  py-5">
+        <a href="index.html" class="btn rounded-pill btn-outline-warning mt-5">
+            <i class="fa-solid fa-arrow-left"></i> regresar
+        </a>
+        <h1 class="mb-4 text-center">Catálogo de Servicios</h1>
+       
+        <div class="row mb-4">
+        <div class="col-md-6">
+            <input type="text" id="buscador" class="form-control" placeholder="Buscar por nombre o descripción...">
+        </div>
+        <div class="col-md-6">
+            <select id="filtroCategoria" class="form-select">
+            <option value="">Todas las categorías</option>
+            </select>
+        </div>
+        </div>
+        <div class="row" id="catalogo"></div>
+
+        <div class="card border-0 shadow-sm mt-4">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-3">¿No encontraste lo que buscabas?</h5>
+              <p class="card-text">
+                Podemos ayudarte con una <strong>cotización personalizada</strong>. 
+                Escribinos por WhatsApp y te responderemos lo más pronto posible.
+              </p>
+              <a href="https://wa.me/50350373239029?text=Hola%2C+quisiera+una+cotizaci%C3%B3n+personalizada+sobre+un+producto" 
+                 class="btn btn-success rounded-pill px-4 py-2" target="_blank">
+                <i class="fab fa-whatsapp me-2"></i> Solicitar cotización
+              </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===================Footer============================-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">&copy; CABO Multiservicios S.A de C.V 2025</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <div class="secondary-buttons">
+                        <!-- Llamada -->
+                        <a href="tel:+50373239029" class="icon-btn" target="_blank" aria-label="Llamar">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/50373239029?text=Quiero%20solicitar%20informacion%20sobre%20sus%20servicios" target="_blank" class="icon-btn whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                
+                        <!-- Facebook -->
+                        <a href=" https://www.facebook.com/INGENIEROCABO" class="icon-btn facebook" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                         <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@cabomultiservicios" target="_blank" class="icon-btn tiktok" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Modal -->
+  <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProductoLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImagen" class="modal-img mb-3" src="" alt="">
+          <p id="modalDescripcion"></p>
+          <p class="fw-bold text-primary" id="modalPrecio"></p>
+        </div>
+        <div class="modal-footer">
+          <a id="modalWhatsapp" href="#" target="_blank" class="btn btn-success">Cotizar en WhatsApp</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const productos = [
+      {
+        categoria: "Techos",
+        nombre: "Área de lavandería",
+        descripcion: "Techo en área de área de lavandería (6.90m2), estructura de Polin C chapa 16 galvanizado, cubierta de lámina ZincAlum cal 26, canal de lámina, botaguas perimetrales, cielo falso PVC, bajante pvc 4x2 pulg, fascia para ocultar techo, construcción de piso de concreto con top de cerámica, reubicación de conexiones hidrosanitarias.",
+        precio: 2380.00,
+        duracion: "30d",
+        imagen: "images/catalogo/techos_lavanderia.jpg"
+      },
+      {
+        categoria: "Techos",
+        nombre: "Terraza diseño contemporáneo",
+        descripcion: "Construcción de techo en área de terraza con diseño contemporáneo (17.60m2), estructura vista de polín C chapa 16 galvanizado pintado cubierta de lámina Zinc Alum cal 26, playrock, canal pvc visto, botaguas perimetrales, bajante pvc 4x2 pulg, construcción de piso de concreto con top de cerámica",
+        precio: 5150.00,
+        duracion: "30d",
+        imagen: "images/catalogo/techos_terraza.jpg"
+      },
+        {
+            categoria: "Techos",
+            nombre: "Terraza y lavandería",
+            descripcion: "Techo en área de servicio y terraza (16.04m2) con cubierta de lámina Zinc Alum cal 26, con canal de lámina, botaguas perimetrales, cielo falso PVC y estructura de polín C galvanizado, poste de 4x2pulg, bajante pvc 4x2 pulg, fascia para ocultar techo, construcción de piso de concreto con top de cerámica",
+            precio: 4800.00,
+            duracion: "30d",
+            imagen: "images/catalogo/techos_terraza_lavanderia.jpg"
+        },
+        {
+            categoria: "Cocheras",
+            nombre: "Cochera pedestal metálico",
+            descripcion: "Construcción de cochera A=36m2 con techo oculto, con pedestales de tubo de 4X4pulg forrados con Denglass, cubierta de techo de lámina tipo zinc Alum, canal de lámina galvaniza, botagua de láminas galvanizada, fascia perimetral, cielo falso PVC, instalación electectrica de 5 luminarias, con acabado fino y pintura.",
+            precio: 4600.00,
+            duracion: "60d",
+            imagen: "images/catalogo/cochera_metalico.jpg"
+        },
+        {
+            categoria: "Cocheras",
+            nombre: "Cochera pedestal bloque armado",
+            descripcion: "Construcción de cochera A=36m2 con techo oculto, con pedestales de bloque armado, cubierta de techo de lámina tipo zinc Alum, canal de lámina galvaniza, botagua de láminas galvanizada, fascia perimetral, cielo falso PVC, instalación electectrica de 5 luminarias, con acabado fino y pintura.",
+            precio: 5600.00,
+            duracion: "35d",
+            imagen: "images/catalogo/cochera_bloque.jpg"
+        },
+        {
+            categoria: "Cocheras",
+            nombre: "Cochera bloque armado con ventanas",
+            descripcion: "Construcción de cochera A=36m2 con techo oculto, con pedestales de bloque armado, cubierta de techo de lámina tipo zinc Alum, canal de lámina galvaniza, botagua de láminas galvanizada, fascia perimetral, cielo falso PVC, instalación eléctrica de 5 luminarias, con acabado fino y pintura.",
+            precio: 6600.00,
+            duracion: "60d",
+            imagen: "images/catalogo/cochera_ventanas.jpg"
+        },
+        {
+            categoria: "Defensas",
+            nombre: "Defensas de ventanas (juego de 3)",
+            descripcion: "Juego de 3 defensas de ventanas, de estructura metálica, con tubo estructural 2x1pulg galvanizado, varilla de 1/2 pulg @12cm, platina y forjados decorativos, base anticorrosiva y pintura color blanco, forjados dorados",
+            precio: 480.00,
+            duracion: "30d",
+            imagen: "images/catalogo/defensa_ventanas.jpg"
+        },
+        {
+            categoria: "Defensas",
+            nombre: "Puerta barandal",
+            descripcion: "Puerta barandal en entrada principal de estructura metálica, 2.10mx1.0m con tubo estructural 2x1pulg galvanizado, varilla de 1/2 pulg @12cm, platina y forjados decorativos, base anticorrosiva y pintura color blanco, forjados dorados",
+            precio: 580.00,
+            duracion: "30d",
+            imagen: "images/catalogo/puerta_barandal.jpg"
+        },
+        {
+            categoria: "Defensas",
+            nombre: "Puerta articulada 4 hojas",
+            descripcion: "Puerta articulada de 4 hojas de estructura metálica, 2.20mx1.70m con tubo estructural 2x1pulg galvanizado, varilla de 1/2 pulg @12cm, platina y forjados decorativos, base anticorrosiva y pintura color blanco, forjados dorados.",
+            precio: 600.00,
+            duracion: "30d",
+            imagen: "images/catalogo/puerta_articulada.jpg"
+        },
+        {
+            categoria: "Pantry",
+            nombre: "Opción básica",
+            descripcion: "Mueble tipo pantry de melamina e=5/8pulg (color a elegir) 2.40ml aéreo, con accesorios de cierres suave, haladeras de acero inoxidable, mueble al piso con cubierta de granito gris aprox 0.40ml entre cocina y refrigerador.",
+            precio: 1290.00,
+            duracion: "30d",
+            imagen: "images/catalogo/pantry_basico.jpg"
+        },
+        {
+            categoria: "Closet",
+            nombre: "Closet estándar",
+            descripcion: "Closet de melamina e=5/8pulg (color a elegir) 1.60 ancho X 2m alto 0.35cm de profundidad, gabinetes inferiores abiertos, 3 gavetas, segmento con colga ropa, con compuertas corredizas",
+            precio: 900.00,
+            duracion: "30d",
+            imagen: "images/catalogo/closet.jpg"
+        },
+        {
+            categoria: "Cielo falso",
+            nombre: "Instalación de cielo PVC",
+            descripcion: "Instalación de cielo pvc, sostenido con perfilería de aluminio",
+            precio: 30.00,
+            unidad: "m2",
+            imagen: "images/catalogo/cielo_pvc.jpg"
+        },
+        {
+            categoria: "Planos",
+            nombre: "Vivienda 1 nivel",
+            descripcion: "Planos arquitectónicos para 1 nivel",
+            precio: 800.00,
+            duracion: "30d",
+            nota: "Desde",
+            imagen: "images/catalogo/planos.png"
+        },
+        {
+            categoria: "Planos",
+            nombre: "Vivienda 2 niveles",
+            descripcion: "Planos arquitectónicos para 2 niveles",
+            precio: 1400.00,
+            duracion: "30d",
+            nota: "Desde",
+            imagen: "images/catalogo/planos.png"
+        }
+    ];
+
+    const catalogoDiv = document.getElementById("catalogo");
+    const buscadorInput = document.getElementById("buscador");
+    const filtroCategoria = document.getElementById("filtroCategoria");
+
+    const modal = new bootstrap.Modal(document.getElementById('modalProducto'));
+    const modalTitulo = document.getElementById("modalProductoLabel");
+    const modalDescripcion = document.getElementById("modalDescripcion");
+    const modalPrecio = document.getElementById("modalPrecio");
+    const modalImagen = document.getElementById("modalImagen");
+    const modalWhatsapp = document.getElementById("modalWhatsapp");
+
+    function renderizarProductos(productosFiltrados) {
+      catalogoDiv.innerHTML = "";
+      if (productosFiltrados.length === 0) {
+        catalogoDiv.innerHTML = '<p class="text-center">No se encontraron productos.</p>';
+        return;
+      }
+      productosFiltrados.forEach((p, i) => {
+        const mensaje = encodeURIComponent(`Hola, quiero cotizar el modelo '${p.nombre}' con precio estimado $${p.precio}`);
+        const card = document.createElement("div");
+        card.className = "col-md-4 mb-4";
+        card.innerHTML = `
+          <div class="card h-100" role="button" data-index="${i}">
+            <img src="${p.imagen}" class="card-img-top" alt="${p.nombre}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${p.nombre}</h5>
+              <p class="card-text">${p.descripcion}</p>
+              <p class="card-text fw-bold text-success">${(p.precio).toLocaleString('en-US', {style: 'currency',currency: 'USD'})}* <span class="text-muted small">(${p.duracion})</span></p>
+              <a href="https://wa.me/50373239029?text=${mensaje}" class="btn btn-success mt-auto" target="_blank">Cotizar en WhatsApp</a>
+            </div>
+          </div>
+        `;
+        card.querySelector('.card').addEventListener('click', () => mostrarModal(p));
+        catalogoDiv.appendChild(card);
+      });
+    }
+
+    function mostrarModal(producto) {
+      const mensaje = encodeURIComponent(`Hola, quiero cotizar el modelo '${producto.nombre}' con precio estimado $${producto.precio}`);
+      modalTitulo.textContent = producto.nombre;
+      modalDescripcion.textContent = producto.descripcion;
+      modalPrecio.textContent = `$${producto.precio.toFixed(2)} (${producto.duracion})`;
+      modalImagen.src = producto.imagen;
+      modalImagen.alt = producto.nombre;
+      modalWhatsapp.href = `https://wa.me/50373239029?text=${mensaje}`;
+      modal.show();
+    }
+
+    function filtrarYRenderizar() {
+      const texto = buscadorInput.value.toLowerCase();
+      const categoria = filtroCategoria.value;
+
+      const resultado = productos.filter(p => {
+        const coincideTexto = p.nombre.toLowerCase().includes(texto) || p.descripcion.toLowerCase().includes(texto);
+        const coincideCategoria = !categoria || p.categoria === categoria;
+        return coincideTexto && coincideCategoria;
+      });
+
+      renderizarProductos(resultado);
+    }
+
+    function cargarCategorias() {
+      const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+      categoriasUnicas.forEach(cat => {
+        const opcion = document.createElement("option");
+        opcion.value = cat;
+        opcion.textContent = cat;
+        filtroCategoria.appendChild(opcion);
+      });
+    }
+
+    buscadorInput.addEventListener("input", filtrarYRenderizar);
+    filtroCategoria.addEventListener("change", filtrarYRenderizar);
+
+    cargarCategorias();
+    renderizarProductos(productos);
+  </script>
+
+</body>
+</html>
